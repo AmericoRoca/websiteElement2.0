@@ -1,0 +1,149 @@
+body {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.10) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white; /* Cambia el color del texto según tus preferencias */
+    font-family: Arial, sans-serif; /* Cambia la fuente del texto según tus preferencias */
+}
+
+.fullstack{
+    margin-left: 790px;
+    font-family: "Montserrat";
+}
+
+
+.circulo-principal{
+    border-radius: 50px;
+    width: 300px;
+    height: 300px;
+    margin-top: 300px;
+    margin-left: 750px;
+    margin-bottom: 500px;
+    background: #151C23;
+    transition: 0.2s;
+    border: 1px solid #151C23;
+    box-shadow: 0 0 10px #151C23, 0 0 40px #151C23, 0 0 80px #151C23;
+    opacity: 0; /* Inicialmente, el elemento es completamente transparente */
+    animation: fadeIn 1s ease-in-out forwards; 
+}
+
+.circulo-principal-opacity{
+    opacity: 0 !important;
+    transition: 500ms;
+}
+
+.code{
+    align-items: center;
+    text-align: center;
+    margin-top: 55px;
+}
+
+.menor{
+    font-size: 150px;
+    margin-right: 5px;
+    color: white;
+}
+.slahs{
+    font-size: 150px;
+    color: white;
+}
+.mayor{
+    font-size: 150px;
+    color: white;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Cuando finaliza la animación, el elemento es completamente visible */
+    }
+}
+
+.skills {
+    display: flex;
+    justify-content: space-between; /* Distribuir el espacio entre las cajas */
+
+}
+
+
+.frontend{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 50px;
+    border: 1px solid #00fffa;
+    box-shadow: 0 0 10px #00fffa, 0 0 40px #00fffa, 0 0 80px #00fffa;
+    opacity: 0;
+}
+
+.frontend:hover{
+    background: gray;
+    transition: 500ms;
+}
+
+.circle-title{
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+
+.icon{
+    align-items: center;
+    margin-left: 100px;
+    margin-top: 30px;
+    color: white;
+}
+
+.front{
+    align-items: center;
+    margin-left: 80px;
+    margin-top: 30px;
+    color: white;
+}
+
+.backend{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #00fffa;
+    box-shadow: 0 0 10px #00fffa, 0 0 40px #00fffa, 0 0 80px #00fffa;
+    margin-bottom: 50px;
+    background: transparent;
+    opacity: 0;
+}
+
+.backend:hover{
+    background: gray;
+    transition: 500ms;
+}
+
+.bbdd{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 50px;
+    border: 1px solid #00fffa;
+    box-shadow: 0 0 10px #00fffa, 0 0 40px #00fffa, 0 0 80px #00fffa;
+    opacity: 0;
+}
+
+.bbdd:hover{
+    background: gray;
+    transition: 500ms;
+}
+
+.tools{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #00fffa;
+    box-shadow: 0 0 10px #00fffa, 0 0 40px #00fffa, 0 0 80px #00fffa;
+    opacity: 0;
+}
+
+.tools:hover{
+    background: gray;
+    transition: 500ms;
+}
+
