@@ -1,99 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: radial-gradient(
-      ellipse at center,
-      rgba(0, 0, 0, 0.10) 0%,
-      rgba(0, 0, 0, 1) 100%
-    );
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    color: white; /* Cambia el color del texto según tus preferencias */
-    font-family: Arial, sans-serif; /* Cambia la fuente del texto según tus preferencias */
-}
-
-.fullstack{
-    margin-left: 790px;
-    font-family: "Montserrat";
-}
-
-
-.circulo-principal{
-    border-radius: 500px;
-    width: 300px;
-    height: 300px;
-    margin-top: 300px;
-    margin-left: 750px;
-    margin-bottom: 500px;
-    background: #151C23;
-    transition: 0.2s;
-    border: 1px solid #151C23;
-    box-shadow: 0 0 10px #151C23, 0 0 40px #151C23, 0 0 80px #151C23;
-    opacity: 0; /* Inicialmente, el elemento es completamente transparente */
-    animation: fadeIn 2s ease-in-out forwards; 
-    position: relative;
-}
-
-.image{
-    width: 100%;
-    margin-top: 70px;
-    margin-left: 5px;
+    background-color: #e0f7fa;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-
-
-@keyframes fadeIn {
-    to {
-        opacity: 1; /* Cuando finaliza la animación, el elemento es completamente visible */
-    }
+.imagen-logo {
+    margin: 0;
+    padding: 0;
 }
 
+.contenedor {
+    display: inline-block;
+}
 
-.frontend{
-    border-radius: 500px;
-    width: 300px;
-    height: 300px;
-    margin-left: 750px;
-    background: #151C23;
-    transition: 0.2s;
-    border: 1px solid #151C23;
-    box-shadow: 0 0 10px #151C23, 0 0 40px #151C23, 0 0 80px #151C23;
+.cuadro {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    background-color: black;
     position: absolute;
+    top: 33%;
+    left: 58%;
+    transform: translate(-50%, -50%); /* Centra el cuadro exactamente en el medio */
 }
 
-.backend{
-    border-radius: 500px;
-    width: 300px;
-    height: 300px;
-    margin-left: 750px;
-    background: #151C23;
-    transition: 0.2s;
-    border: 1px solid #151C23;
-    box-shadow: 0 0 10px #151C23, 0 0 40px #151C23, 0 0 80px #151C23;
+
+.headerCuadro{
+    width: 50px;
+    height: 50px;
+    background-color: #37505D;
     position: absolute;
+    margin-top: 1250px;
+
 }
 
-.bbdd{
-    border-radius: 500px;
-    width: 300px;
-    height: 300px;
-    margin-left: 750px;
-    background: #151C23;
-    transition: 0.2s;
-    border: 1px solid #151C23;
-    box-shadow: 0 0 10px #151C23, 0 0 40px #151C23, 0 0 80px #151C23;
+.circle{
     position: absolute;
+    margin-top: 1230px;
+    margin-left: 120px;
 }
 
+.icon-codigo {
+    stroke-dasharray: 50; /* Ajusta el tamaño del trazo */
+    stroke-dashoffset: 50; /* Oculta el trazo completamente al principio */
+    fill: black; /* Sin relleno */
+    stroke-width: 2;
+    stroke: black; /* Color del trazo */
+    width: 50px; /* Asegura el tamaño adecuado */
+    height: 50px;
+    opacity: 0;
+}
 
-.tools{
-    border-radius: 500px;
-    width: 300px;
-    height: 300px;
-    margin-left: 750px;
-    background: #151C23;
-    transition: 0.2s;
-    border: 1px solid #151C23;
-    box-shadow: 0 0 10px #151C23, 0 0 40px #151C23, 0 0 80px #151C23;
+.cuadroLinea{
     position: absolute;
+    margin-top: 1240px;
+    margin-right: 3px;
 }
+
+.cuadroLineaCodigo{
+    position: absolute;
+    margin-top: 1240px;
+    margin-right: 3px;
+}
+
+.linea{
+    border: 1px solid white;
+    margin-bottom: 5px;
+    margin-top: 11px;
+    width: 42px;
+    margin-left: 4px;
+    border-radius: 50px;
+}
+
+.lineaHeader{
+    border: 2px solid white;
+    width: 10px;
+    position: absolute;
+    margin-top: 1303px;
+    z-index: 2;
+    opacity: 0;
+}
+
+.cuadroFront{
+    position: absolute;
+    width: 750px;
+    margin-top: 1300px;
+    height: 5px;
+    background-color: #37505D;
+    opacity: 0;
+    z-index: 1;
+}
+
+.lineaFront{
+    border: 2px solid white;
+    width: 1px;
+    position: absolute;
+    margin-top: 1550px;
+    z-index: 2;
+    opacity: 0;
+}
+
+.cuadroBack{
+    position: absolute;
+    width: 750px;
+    margin-top: 1800px;
+    height: 5px;
+    background-color: #37505D;
+    opacity: 0;
+    z-index: 1;
+}
+
+.lineaBack{
+    border: 2px solid white;
+    width: 10px;
+    position: absolute;
+    margin-top: 1804px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.cuadroDB{
+    height: 500px;
+    position: absolute;
+    margin-top: 5500px;
+    border: 1px solid black;
+
+}
+
+.lineaDB{
+    border: 2px solid white;
+    width: 1px;
+    position: absolute;
+    margin-top: 2047px;
+    z-index: 2;
+    opacity: 0;
+}
+
+.title{
+    position: absolute;
+    margin-top: 1235px;
+    z-index: 2;
+    margin-left: 150px;
+}
+
+ .texto-titulo {
+    stroke-dasharray: 1000; /* Define el tamaño del contorno */
+    stroke-dashoffset: 1000; /* Oculta el trazo completamente al principio */
+    fill: none; /* No queremos que el texto esté lleno, solo el borde */
+
+}
+
+.title-front{
+   position: absolute;
+   margin-top: 1360px;
+   z-index: 2;
+   margin-right: 360px;
+   opacity: 0;
+}
+
+.title-back{
+    position: absolute;
+    margin-top: 1360px;
+    z-index: 2;
+    margin-left: 350px;
+    opacity: 0;
+ }
+
+ .title-db{
+    position: absolute;
+    margin-top: 1870px;
+    z-index: 2;
+    margin-right: 360px;
+    opacity: 0;
+ }
+
+ .title-tools{
+    position: absolute;
+    margin-top: 1870px;
+    z-index: 2;
+    margin-left: 350px;
+    opacity: 0;
+ }
+
+
