@@ -1,162 +1,228 @@
-//Scrolling effects
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".fullstack", {
-  scrollTrigger: {
-    trigger: ".circulo-principal",
-    toggleActions: "restart pause restart resume",
-  },
-  duration: 1,
-  y: 200,
-});
 
-// Selecciona el elemento que deseas animar
-const circuloPrincipal = document.querySelector(".circulo-principal");
-const skills = document.querySelector(".skills");
-const frontend = document.querySelector(".frontend");
-const backend = document.querySelector(".backend");
-const bbdd = document.querySelector(".bbdd");
-const tools = document.querySelector(".tools");
 
-// Crea una animación con GSAP y ScrollTrigger
-const animacion = gsap.to(circuloPrincipal, {
-  scrollTrigger: {
-    trigger: ".circulo-principal",
-    toggleActions: "restart pause restart resume",
-    start: "50px 70%",
-    end: "600px 100%",
-    scrub: true,
-  },
-  duration: 9,
-  y: 800,
-  rotation: 360,
-});
-
-const animacionFront = gsap.to(frontend, {
-  scrollTrigger: {
-    trigger: ".frontend",
-    toggleActions: "restart pause restart resume",
-    start: "50px 70%",
-    end: "700px 100%",
-    scrub: true,
-    markers: { color: "blue", colorEnd: "blue" },
-  },
-  duration: 9,
-  x: -700,
-  rotation: 360,
-  onComplete: function () {
-    gsap.to(frontend, {
-      scrollTrigger: {
-        trigger: ".frontend",
-        toggleActions: "restart pause restart resume",
-        start: "450px 70%",
-        end: "700px 100%",
-        scrub: true,
-        markers: true,
-      },
-      duration: 9,
-      x: 10,
-      rotation: 360,
-    });
-
-    gsap.to(backend, {
-      scrollTrigger: {
-        trigger: ".frontend",
-        toggleActions: "restart pause restart resume",
-        start: "450px 70%",
-        end: "700px 100%",
-        scrub: true,
-        markers: true,
-      },
-      duration: 9,
-      x: 10,
-      rotation: 360,
-    });
-
-    gsap.to(bbdd, {
-      scrollTrigger: {
-        trigger: ".frontend",
-        toggleActions: "restart pause restart resume",
-        start: "450px 70%",
-        end: "700px 100%",
-        scrub: true,
-        markers: true,
-      },
-      duration: 9,
-      x: 10,
-      rotation: 360,
-    });
-
-    gsap.to(tools, {
-      scrollTrigger: {
-        trigger: ".frontend",
-        toggleActions: "restart pause restart resume",
-        start: "450px 70%",
-        end: "700px 100%",
-        scrub: true,
-        markers: true,
-      },
-      duration: 9,
-      x: 10,
-      rotation: 360,
-    });
-      iniciarSiguienteAccion()
-  },
-
-});
-
-function iniciarSiguienteAccion() {
-  const finalFront = gsap.to(frontend, {
-    scrollTrigger: {
-      trigger: ".frontend",
-      toggleActions: "restart pause restart resume",
-      start: "700px 70%",
-      end: "1000px 100%",
-      scrub: true,
-      markers: true,
-    },
-    duration: 9,
-    scale: 2,
-    y: 500,
+// Primero animamos el .cuadro con rotación
+gsap.to(".cuadro", {
+    duration: 2,
     rotation: 360,
-  });
-}
-
-const animacionBack = gsap.to(backend, {
-  scrollTrigger: {
-    trigger: ".backend",
-    toggleActions: "restart pause restart resume",
-    start: "200px 70%",
-    end: "500px 100%",
-    scrub: true,
-  },
-  duration: 9,
-  x: -350,
-  rotation: 360,
+    transformOrigin: "50% 50%",
+    x: 100,
+    ease: "bounce.out"
 });
 
-const animacionBB = gsap.to(bbdd, {
-  scrollTrigger: {
-    trigger: ".bbdd",
-    toggleActions: "restart pause restart resume",
-    start: "200px 70%",
-    end: "500px 100%",
-    scrub: true,
-  },
-  duration: 9,
-  x: 350,
-  rotation: 360,
+let tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".contenedor",  // El elemento que activa la animación
+        start: "800px 40%",  // La animación empezará cuando el trigger esté en el 80% de la pantalla
+        toggleActions: "play none none none", 
+    }
 });
 
-const animacionTools = gsap.to(tools, {
-  scrollTrigger: {
-    trigger: ".tools",
-    toggleActions: "restart pause restart resume",
-    start: "200px 70%",
-    end: "500px 100%",
-    scrub: true,
-  },
-  duration: 9,
-  x: 700,
-  rotation: 360,
+// Luego animamos .headerCuadro
+tl.fromTo(".headerCuadro", 
+    {
+        scaleX: 1,  // Estado inicial (tamaño normal)
+    }, 
+    {   
+        scaleY: 2,
+        scaleX: 15,  // Estado final (agrandado en el eje X)
+        duration: 0.5,  // Duración de la animación
+        ease: "bounce.out",  // Animación suave con rebote
+        onComplete: function () {
+        // Luego animamos .cuadroLinea y .circle a la vez
+        tl.to(".cuadroLinea", {
+            x: 345,
+            rotation: 360,    // Gira 360 grados
+            duration: 1.5,    // Duración de la animación de giro
+            ease: "power2.out",  // Efecto de suavización
+            onComplete: function() {
+                gsap.to(".cuadroLinea",{
+                    opacity:0,
+                    duration: 1,
+                    ease: "power2.out"
+                })
+            }
+        });
+
+        // Animación del ícono de código
+        gsap.fromTo(".icon-codigo", {
+            strokeDashoffset: 100,
+            strokeDasharray: 100,
+            opacity: 0
+        }, {
+            strokeDashoffset: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "bounce.out",
+            x: -390,
+            onComplete: function () {
+                // Animación de .texto-titulo
+                gsap.to(".texto-titulo", {
+                    strokeDashoffset: 0,
+                    duration: 4,
+                    ease: "power2.out",
+                    onComplete: function () {
+                        gsap.to(".texto-titulo", {
+                            fill: "black",
+                            duration: 0.3
+                        });
+                    }
+                });
+
+                // Después animamos .cuadroFront
+                gsap.fromTo(".cuadroFront", {
+                    opacity: 0,
+                    scaleY: 0,
+                    transformOrigin: "top"
+                }, {
+                    opacity: 1,
+                    scaleY: 50,
+                    ease: "bounce.out",
+                    duration: 0.7,
+                    onComplete: function () {
+                        // Luego animamos .lineaHeader
+                        gsap.fromTo(".lineaHeader", {
+                            opacity: 0,
+                            width: "0%"
+                        }, {
+                            opacity: 1,
+                            width: "750px",
+                            duration: 0.7,
+                            ease: "bounce.out",
+                            onComplete: function () {
+                                // Luego animamos .cuadroBack
+                                gsap.fromTo(".cuadroBack", {
+                                    opacity: 0,
+                                    scaleY: 0,
+                                    transformOrigin: "top"
+                                }, {
+                                    opacity: 1,
+                                    scaleY: 50,
+                                    ease: "bounce.out",
+                                    duration: 1,
+                                    onComplete: function () {
+                                        gsap.fromTo(".lineaBack", {
+                                            opacity: 0,
+                                            width: "0%"
+                                        }, {
+                                            opacity: 1,
+                                            width: "750px",
+                                            duration: 0.7,
+                                            ease: "bounce.out"
+                                        });
+
+                                        gsap.fromTo(".icons-front svg", 
+                                            {
+                                                opacity: 0,  // Comienzan invisibles
+                                                scale: 0  // Tamaño inicial 0
+                                            }, 
+                                            {
+                                                opacity: 1,  // Hacemos los iconos visibles
+                                                scale: 1,  // Escalamos al tamaño completo
+                                                duration: 1,  // Duración de la animación
+                                                ease: "bounce.out",  // Efecto de rebote
+                                                stagger: 0.2  // Retraso entre cada icono para que aparezcan uno a la vez
+                                            }
+                                        );
+
+                                        gsap.fromTo(".icons-back svg", 
+                                            {
+                                                opacity: 0,  // Comienzan invisibles
+                                                scale: 0  // Tamaño inicial 0
+                                            }, 
+                                            {
+                                                opacity: 1,  // Hacemos los iconos visibles
+                                                scale: 1,  // Escalamos al tamaño completo
+                                                duration: 1,  // Duración de la animación
+                                                ease: "bounce.out",  // Efecto de rebote
+                                                stagger: 0.2  // Retraso entre cada icono para que aparezcan uno a la vez
+                                            }
+                                        );
+                                        gsap.fromTo(".icons-back img", 
+                                            {
+                                                opacity: 0,  // Comienzan invisibles
+                                                scale: 0  // Tamaño inicial 0
+                                            }, 
+                                            {
+                                                opacity: 1,  // Hacemos los iconos visibles
+                                                scale: 1,  // Escalamos al tamaño completo
+                                                duration: 1,  // Duración de la animación
+                                                ease: "bounce.out",  // Efecto de rebote
+                                                stagger: 0.2  // Retraso entre cada icono para que aparezcan uno a la vez
+                                            }
+                                        );
+
+                                        gsap.fromTo(".lineaDB", {
+                                            opacity: 0,
+                                            height: "0%"
+                                        }, {
+                                            opacity: 1,
+                                            height: "250",
+                                            duration: 0.7,
+                                            ease: "bounce.out",
+                                            onComplete: function () {
+                                                gsap.fromTo(".title-db, .title-tools", {
+                                                    opacity: 0
+                                                }, {
+                                                    opacity: 1,
+                                                    duration: 1
+                                                });
+                                            }
+                                        });
+
+                                        gsap.fromTo(".icons-db img", //Aqui por que hay img en vez de svg, mira los stylos
+                                            {
+                                                opacity: 0,  // Comienzan invisibles
+                                                scale: 0  // Tamaño inicial 0
+                                            }, 
+                                            {
+                                                opacity: 1,  // Hacemos los iconos visibles
+                                                scale: 1,  // Escalamos al tamaño completo
+                                                duration: 1,  // Duración de la animación
+                                                ease: "bounce.out",  // Efecto de rebote
+                                                stagger: 0.2  // Retraso entre cada icono para que aparezcan uno a la vez
+                                            }
+                                        );
+
+                                        gsap.fromTo(".icons-tools svg", 
+                                            {
+                                                opacity: 0,  // Comienzan invisibles
+                                                scale: 0  // Tamaño inicial 0
+                                            }, 
+                                            {
+                                                opacity: 1,  // Hacemos los iconos visibles
+                                                scale: 1,  // Escalamos al tamaño completo
+                                                duration: 1,  // Duración de la animación
+                                                ease: "bounce.out",  // Efecto de rebote
+                                                stagger: 0.2  // Retraso entre cada icono para que aparezcan uno a la vez
+                                            }
+                                        );
+                                    }
+                                });
+                            }
+                        });
+
+                        // Finalmente animamos .lineaFront
+                        gsap.fromTo(".lineaFront", {
+                            opacity: 0,
+                            height: "0%"
+                        }, {
+                            opacity: 1,
+                            height: "250",
+                            duration: 1,
+                            ease: "bounce.out"
+                        });
+
+                        gsap.fromTo(".title-front, .title-back", {
+                            opacity: 0
+                        }, {
+                            opacity: 1,
+                            duration: 1
+                        });
+                    }
+                });
+            }
+        });
+    }
 });
