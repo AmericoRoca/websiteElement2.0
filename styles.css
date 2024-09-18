@@ -12,6 +12,120 @@ body {
     align-items: center;
 }
 
+
+/* Para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;  /* Reducir un poco el tamaño de fuente */
+        justify-content: flex-start; /* Ajustar la alineación para pantallas más pequeñas */
+    }
+
+    .cuadro, .headerCuadro, .circle, .cuadroLinea, .lineaHeader, .cuadroFront, .lineaFront, .cuadroBack, .lineaBack, .cuadroDB, .lineaDB {
+        width: 90%;  /* Asegura que los elementos se adapten al ancho de la pantalla */
+        margin-left: 0;  /* Alinearlos al centro */
+    }
+
+    .contenedor {
+        width: 100%;  /* El contenedor ocupará todo el ancho */
+        text-align: center;  /* Centramos el contenido */
+    }
+
+    .title {
+        margin-left: 0;  /* Centramos el título */
+        font-size: 1.5rem;  /* Ajustamos el tamaño */
+    }
+
+    .texto-titulo {
+        font-size: 3rem;  /* Ajustar tamaño del texto */
+    }
+
+    .icons {
+        gap: 10px;  /* Reducir el espacio entre los iconos */
+        flex-wrap: wrap;  /* Permitir que los íconos se ajusten automáticamente */
+    }
+
+    .icons-front, .icons-back, .icons-db, .icons-tools {
+        margin: 0 auto;  /* Centrar los contenedores de íconos */
+    }
+
+    .title-front, .title-back, .title-db, .title-tools {
+        font-size: 1.5rem;  /* Ajustar el tamaño de los títulos */
+        margin-top: 20px;
+    }
+
+    .cuadro {
+        left: 50%;  /* Centrar el cuadro en tablets */
+    }
+
+    .lineaFront, .lineaBack, .lineaDB {
+        width: 90%;  /* Asegura que las líneas también se adapten */
+    }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;  /* Ajustar el tamaño del texto aún más para móviles */
+        justify-content: flex-start;  /* Aseguramos que los elementos comiencen en la parte superior */
+    }
+
+    .contenedor {
+        width: 100%;  /* Asegurar que el contenedor ocupe el 100% del ancho */
+        text-align: center;
+    }
+
+    .title {
+        margin-left: 0;
+        font-size: 1.2rem;
+    }
+
+    .texto-titulo {
+        font-size: 2.5rem;  /* Ajustar el tamaño del texto */
+    }
+
+    .icons {
+        gap: 8px;  /* Reducimos el espacio entre los iconos */
+        flex-direction: column;  /* Alinear los iconos en una sola columna */
+    }
+
+    .icons2 {
+        flex-direction: column;  /* Hacer lo mismo para la segunda fila de iconos */
+    }
+
+    .icons svg, .icons img, .icons2 svg, .icons2 img {
+        width: 40px;  /* Reducir el tamaño de los iconos */
+        height: 40px;
+    }
+
+    .title-front, .title-back, .title-db, .title-tools {
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+
+    .cuadro {
+        width: 40px;
+        height: 40px;
+        left: 50%;
+    }
+
+    .cuadroFront, .cuadroBack, .lineaFront, .lineaBack, .lineaDB {
+        width: 95%;  /* Asegurar que se ajusten al ancho */
+    }
+
+    .circle {
+        margin-left: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    .headerCuadro {
+        width: 40px;
+        height: 40px;
+        margin-top: 1100px;
+    }
+}
+
+
 .imagen-logo {
     margin: 0;
     padding: 0;
