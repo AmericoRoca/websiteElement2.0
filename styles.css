@@ -12,55 +12,107 @@ body {
     align-items: center;
 }
 
-
-/* Para pantallas medianas (tablets) */
 @media (max-width: 768px) {
     body {
         font-size: 14px;  /* Reducir un poco el tamaño de fuente */
         justify-content: flex-start; /* Ajustar la alineación para pantallas más pequeñas */
-    }
-
-    .cuadro, .headerCuadro, .circle, .cuadroLinea, .lineaHeader, .cuadroFront, .lineaFront, .cuadroBack, .lineaBack, .cuadroDB, .lineaDB {
-        width: 90%;  /* Asegura que los elementos se adapten al ancho de la pantalla */
-        margin-left: 0;  /* Alinearlos al centro */
+        padding: 10px; /* Añadir algo de padding general */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
     }
 
     .contenedor {
-        width: 100%;  /* El contenedor ocupará todo el ancho */
-        text-align: center;  /* Centramos el contenido */
-    }
-
-    .title {
-        margin-left: 0;  /* Centramos el título */
-        font-size: 1.5rem;  /* Ajustamos el tamaño */
-    }
-
-    .texto-titulo {
-        font-size: 3rem;  /* Ajustar tamaño del texto */
-    }
-
-    .icons {
-        gap: 10px;  /* Reducir el espacio entre los iconos */
-        flex-wrap: wrap;  /* Permitir que los íconos se ajusten automáticamente */
-    }
-
-    .icons-front, .icons-back, .icons-db, .icons-tools {
-        margin: 0 auto;  /* Centrar los contenedores de íconos */
-    }
-
-    .title-front, .title-back, .title-db, .title-tools {
-        font-size: 1.5rem;  /* Ajustar el tamaño de los títulos */
-        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar los elementos dentro del contenedor */
+        margin: 0 auto; /* Centramos el contenedor en la pantalla */
     }
 
     .cuadro {
-        left: 50%;  /* Centrar el cuadro en tablets */
+        margin-top: 29px;
+        margin-left: 75px;
+        width: 90%; /* Usar un ancho relativo para adaptarse mejor a pantallas más pequeñas */
     }
 
-    .lineaFront, .lineaBack, .lineaDB {
-        width: 90%;  /* Asegura que las líneas también se adapten */
+    .headerCuadro, .cuadroLinea {
+        margin: 0 auto; /* Centramos el elemento horizontalmente */
+        width: 80%; /* Usamos un ancho relativo */
+        margin-left: 360px;
     }
+
+    .cuadroLinea{
+        margin-right: -555px !important;
+        width: 50px;
+    }
+
+    .title{
+        margin-left: 55px !important;
+    }
+
+    .circle{
+        margin-left: 10px !important;
+    }
+    .cuadroFront, .cuadroBack {
+        margin-left: 10px; /* Evitamos márgenes laterales grandes */
+        width: 100%; /* Que ocupen el ancho completo del contenedor */
+    }
+
+    .cuadroBack {
+        margin-bottom: 10px; /* Añadimos un poco de margen inferior */
+    }
+
+    .lineaHeader, .lineaBack {
+        margin-left: 10px;
+        width: 100%; /* Que ocupen el ancho completo del contenedor */
+    }
+
+    .lineaFront, .lineaDB {
+        margin-left: 380px;
+        width: 100%; /* Que ocupen el ancho completo del contenedor */
+    }
+
+    .title-front, .title-db {
+        text-align: center; /* Centramos el texto en lugar de usar márgenes grandes */
+        margin: 10px 0; /* Añadimos algo de margen para espaciado */
+        margin-left: 140px;
+    }
+
+    .title-back{
+        margin-left: 520px !important;
+    }
+
+    .title-tools{
+        margin-left: 505px !important;
+    }
+    .icons{
+        width: 45% !important;
+    }
+
+    .icons2{
+        width: 20% !important;
+    }
+
+    .icons-front{
+        margin-left: 15px !important;
+        padding: 0px;
+    }
+
+    .icons-db{
+        margin-left: 130px !important;
+        padding: 0px;
+    }
+
+    .icons-back{
+        margin-left: 400px !important;
+    }
+
+    .icons-tools{
+        margin-left: 505px !important;
+    }
+
 }
+
 
 /* Para pantallas pequeñas (móviles) */
 @media (max-width: 480px) {
@@ -369,4 +421,3 @@ body {
     fill: currentColor;  /* El color tomará el color actual de los estilos de texto */
     opacity: 0;  /* Asegura que los íconos estén ocultos antes de la animación */
 }
-
