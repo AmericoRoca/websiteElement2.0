@@ -12,7 +12,107 @@ body {
     align-items: center;
 }
 
-@media (max-width: 768px) {
+
+@media (min-width: 800px) and (max-width: 900px) {
+    body {
+        font-size: 14px;  
+        justify-content: flex-start; 
+        padding: 10px; 
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        margin: 0 auto; 
+    }
+
+    .cuadro {
+        margin-top: 4.1% !important;
+        margin-left: 12% !important;
+        width: 90%; 
+    }
+
+    .headerCuadro, .cuadroLinea {
+        margin: 0 auto; 
+        width: 80%; 
+        margin-left: 48%;
+    }
+
+    .cuadroLinea{
+        margin-right: -555px !important;
+        width: 50px;
+    }
+
+    .title{
+        margin-left: 15% !important;
+    }
+
+    .circle{
+        margin-left: 55% !important;
+    }
+
+    .cuadroFront, .cuadroBack {
+        margin-left: 9.1%; 
+        width: 100%; 
+    }
+
+    .lineaHeader, .lineaBack {
+        margin-left: 9.1%;
+        width: 100%; 
+    }
+
+    .lineaFront, .lineaDB {
+        margin-left: 49.5%;
+        width: 100%; 
+    }
+
+    .title-front, .title-db {
+        text-align: center; 
+        margin-left: 24.1%;
+    }
+
+    .title-back{
+        margin-left: 65% !important;
+    }
+
+    .title-tools{
+        margin-left: 64% !important;
+    }
+    .icons{
+        width: 45% !important;
+    }
+
+    .icons2{
+        width: 20% !important;
+    }
+
+    .icons-front{
+        margin-left: 7% !important;
+        padding: 0px;
+    }
+
+    .icons-db{
+        margin-left: 21% !important;
+        padding: 0px;
+    }
+
+    .icons-back{
+        margin-left: 50% !important;
+    }
+
+    .icons-tools{
+        margin-left: 62% !important;
+    }
+
+}
+
+
+/*tablets */
+@media (min-width: 768px) and (max-width: 800px) {
     body {
         font-size: 14px;  /* Reducir un poco el tamaño de fuente */
         justify-content: flex-start; /* Ajustar la alineación para pantallas más pequeñas */
@@ -30,8 +130,8 @@ body {
     }
 
     .cuadro {
-        margin-top: 29px;
-        margin-left: 75px;
+        margin-top: 4.1% !important;
+        margin-left: 12% !important;
         width: 90%; /* Usar un ancho relativo para adaptarse mejor a pantallas más pequeñas */
     }
 
@@ -51,7 +151,7 @@ body {
     }
 
     .circle{
-        margin-left: 10px !important;
+        margin-left: 420px !important;
     }
     .cuadroFront, .cuadroBack {
         margin-left: 10px; /* Evitamos márgenes laterales grandes */
@@ -115,67 +215,111 @@ body {
 
 
 /* Para pantallas pequeñas (móviles) */
+
+/*tablets */
 @media (max-width: 480px) {
     body {
-        font-size: 12px;  /* Ajustar el tamaño del texto aún más para móviles */
-        justify-content: flex-start;  /* Aseguramos que los elementos comiencen en la parte superior */
+        font-size: 14px;  /* Reducir un poco el tamaño de fuente */
+        justify-content: flex-start; /* Ajustar la alineación para pantallas más pequeñas */
+        padding: 10px; /* Añadir algo de padding general */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
     }
 
     .contenedor {
-        width: 100%;  /* Asegurar que el contenedor ocupe el 100% del ancho */
-        text-align: center;
-    }
-
-    .title {
-        margin-left: 0;
-        font-size: 1.2rem;
-    }
-
-    .texto-titulo {
-        font-size: 2.5rem;  /* Ajustar el tamaño del texto */
-    }
-
-    .icons {
-        gap: 8px;  /* Reducimos el espacio entre los iconos */
-        flex-direction: column;  /* Alinear los iconos en una sola columna */
-    }
-
-    .icons2 {
-        flex-direction: column;  /* Hacer lo mismo para la segunda fila de iconos */
-    }
-
-    .icons svg, .icons img, .icons2 svg, .icons2 img {
-        width: 40px;  /* Reducir el tamaño de los iconos */
-        height: 40px;
-    }
-
-    .title-front, .title-back, .title-db, .title-tools {
-        font-size: 1.2rem;
-        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar los elementos dentro del contenedor */
+        margin: 0 auto; /* Centramos el contenedor en la pantalla */
     }
 
     .cuadro {
-        width: 40px;
-        height: 40px;
-        left: 50%;
+        margin-top: 8% !important;
+        margin-left: 40% !important;
+        width: 90%; /* Usar un ancho relativo para adaptarse mejor a pantallas más pequeñas */
     }
 
-    .cuadroFront, .cuadroBack, .lineaFront, .lineaBack, .lineaDB {
-        width: 95%;  /* Asegurar que se ajusten al ancho */
+    .headerCuadro, .cuadroLinea {
+        width: 42.4px !important; /* Usamos un ancho relativo */
+        margin-left: 63.9%;
     }
 
-    .circle {
-        margin-left: 0;
-        width: 40px;
-        height: 40px;
+    .title{
+        margin-left: 55px !important;
+        width: 180px !important;
     }
 
-    .headerCuadro {
-        width: 40px;
-        height: 40px;
-        margin-top: 1100px;
+    .svg{
+        width: 495px !important;
     }
+    .texto-titulo{
+        font-size: 65px;
+    }
+
+    .circle{
+        margin-left: 420px !important;
+    }
+    .cuadroFront, .cuadroBack {
+        margin-left: 10px; /* Evitamos márgenes laterales grandes */
+        width: 131.2% !important; /* Que ocupen el ancho completo del contenedor */
+    }
+
+    .cuadroBack {
+        margin-bottom: 10px; /* Añadimos un poco de margen inferior */
+    }
+
+    .lineaHeader, .lineaBack {
+        margin-left: 10px;
+        width: 131.2% !important; /* Que ocupen el ancho completo del contenedor */
+    }
+
+    .lineaFront, .lineaDB {
+        margin-left: 70%;
+        width: 100%; /* Que ocupen el ancho completo del contenedor */
+    }
+
+    .title-front, .title-db {
+        text-align: center; /* Centramos el texto en lugar de usar márgenes grandes */
+        margin: 10px 0; /* Añadimos algo de margen para espaciado */
+        margin-left: 120px;
+    }
+
+    .title-back{
+        margin-left: 430px !important;
+    }
+
+    .title-tools{
+        margin-left: 450px !important;
+    }
+    .icons{
+        width: 60% !important;
+
+    }
+
+    .icons2{
+        width: 40% !important;
+    }
+
+    .icons-front{
+        margin-left: 20px !important;
+        padding: 0px;
+    }
+
+    .icons-db{
+        margin-left: 90px !important;
+    }
+
+    .icons-back{
+        margin-left: 352px !important;
+    }
+
+    .icons-tools{
+        margin-left: 390px !important;
+    }
+
 }
+
 
 
 .imagen-logo {
@@ -191,6 +335,7 @@ body {
     border: 1px solid black;
     width: 50px;
     height: 50px;
+    margin-top: 5px;
     background-color: black;
     position: absolute;
     top: 33%;
@@ -314,7 +459,7 @@ body {
     position: absolute;
     margin-top: 1235px;
     z-index: 2;
-    margin-left: 150px;
+    margin-left: 50px;
 }
 
  .texto-titulo {
