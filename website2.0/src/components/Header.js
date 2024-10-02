@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from '../assets/img/logo.png'; // Importar correctamente la imagen
+import logo from '../assets/img/logo.png'; 
 import { NavLink } from 'react-router-dom';
+import "../assets/css/components/Header.css"
 
 export const Header = () => {
 
 
   return (
-    <header className="App-header container-fluid">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <header className="App-header container-fluid navigation">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           {/* Logo */}
           <a className="navbar-brand" href="#">
@@ -17,7 +18,6 @@ export const Header = () => {
               className="d-inline-block align-text-top"
               width="100"
             />
-
           </a>
 
           {/* Botón hamburguesa para pantallas pequeñas */}
