@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from '../assets/img/logo.png'; // Importar correctamente la imagen
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
-  
+
 
   return (
     <header className="App-header container-fluid">
@@ -11,12 +12,12 @@ export const Header = () => {
           {/* Logo */}
           <a className="navbar-brand" href="#">
             <img
-              src={logo} 
+              src={logo}
               alt="Logo"
               className="d-inline-block align-text-top"
-              width="50" 
+              width="100"
             />
-            Mi Sitio Web
+
           </a>
 
           {/* Botón hamburguesa para pantallas pequeñas */}
@@ -36,24 +37,16 @@ export const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Inicio
-                </a>
+                <NavLink to="/home" exact activeClassName="active">Home</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Sobre Nosotros
-                </a>
+                <NavLink to="/about" exact activeClassName="active">About</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Servicios
-                </a>
+                <NavLink to="/services" exact activeClassName="active">Services</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contacto
-                </a>
+                <NavLink to="/contact" exact activeClassName="active">Contact</NavLink>
               </li>
             </ul>
           </div>
