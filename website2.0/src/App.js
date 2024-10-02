@@ -1,15 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { gsap } from 'gsap';
+import { Header } from "./components/Header"
+import  Footer  from './components/Footer';
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+      <Header/>
+
+      
+
+      <Footer/>
     </div>
   );
 }
