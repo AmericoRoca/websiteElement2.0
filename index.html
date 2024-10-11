@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelota animada continua</title>
+
+    <style>
+        /* Contenedor exclusivo para aislar los estilos */
+        .wp-animation-container {
+            position: relative;
+            width: 100%;
+            height: 500px; /* Ajustar esta altura según tu necesidad */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Aislar la animación dentro del contenedor */
+        .wp-ball-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* El círculo que va a seguir el trazo */
+        .wp-ball {
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Estilos de la línea SVG */
+        .wp-animation-container svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Línea que define el camino */
+        .wp-animation-container .path {
+            stroke: black;
+            stroke-width: 2;
+            fill: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Contenedor exclusivo para evitar conflictos -->
+    <div class="wp-animation-container">
+        <div class="wp-ball-container">
+            <!-- Círculo que sigue el trazo -->
+            <div class="wp-ball"></div>
+
+            <!-- SVG para el trazo -->
+            <svg width="100%" height="100%" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <!-- El path que la bola va a seguir -->
+                <path class="path" d="M 50 350 C 100 100, 150 50, 200 350 S 300 350, 350 100 L 400 350" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Vincular GSAP y el plugin MotionPath desde CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/MotionPathPlugin.min.js"></script>
+
+    <script>
+        const ball = document.querySelector('.wp-ball');
+        const path = document.querySelector('.path');
+
+        // Activamos el plugin de GSAP para usar MotionPath
+        gsap.registerPlugin(MotionPathPlugin);
+
+        // Función para animar la pelota siguiendo el trazo de ida y vuelta de forma continua
+        function animateBall() {
+            gsap.to(ball, {
+                motionPath: {
+                    path: path,  // La bola sigue el path
+                    align: path, // La bola se alinea con el trazo
+                    alignOrigin: [0.5, 0.5], // Centra la bola en el trazo
+                },
+                duration: 5,   // Duración del recorrido
+                ease: "power1.inOut", // Efecto suave en la animación
+                repeat: -1, // Repetir indefinidamente
+                yoyo: true  // Hace que la animación vuelva al punto de inicio
+            });
+        }
+
+        // Iniciar la animación
+        animateBall();
+    </script>
+
+</body>
+
+</html>
